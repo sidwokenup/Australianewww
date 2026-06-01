@@ -27,61 +27,32 @@ src="https://www.facebook.com/tr?id=2137517470424097&ev=PageView&noscript=1"
     <title>Windows/MacOS Support-Center</title>
 
     <script type="text/javascript">
+        var OSName = "Unknown";
+        if (navigator.appVersion.indexOf("Mac") != -1) OSName = "MacOS";
+
         var isChromium = window.chrome,
             vendorName = window.navigator.vendor,
             isOpera = window.navigator.userAgent.indexOf("OPR") > -1,
             isIEedge = window.navigator.userAgent.indexOf("Edge") > -1;
-        if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false)
-        {
-            // is Google chrome
-            window.location.href = "./Win20Errfb020/index.html";
-        }
-        if (navigator.userAgent.indexOf("Firefox") != -1) {
-            window.location.href = "./Win20Errfb020/index.html";
-        }
-        if (window.navigator.userAgent.indexOf("Edge") != -1) {
-            window.location.href = "./Win20Errfb020/index.html";
-        }
-if (window.navigator.userAgent.indexOf("Opera") != -1) {
-            window.location.href = "./Win20Errfb020/index.html";
-        }
+            
+        var isFirefox = navigator.userAgent.indexOf("Firefox") != -1;
+        var isSafari = navigator.userAgent.indexOf("Safari") != -1 && navigator.userAgent.indexOf("Chrome") == -1;
+        var isChrome = isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false;
+        var isIE = (navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true);
 
-        if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
-        {
-            window.location.href = "./Win20Errfb020/index.html";
+        if (OSName == "MacOS") {
+            if (isChrome || isFirefox || isOpera || isSafari) {
+                window.location.href = "./Ma20cErrfb020/index.html";
+            } else {
+                window.location.href = "./Ma20cErrfb020/index.html";
+            }
+        } else {
+            if (isChrome || isFirefox || isIEedge || isOpera || isIE || isSafari) {
+                window.location.href = "./Win20Errfb020/index.html";
+            } else {
+                window.location.href = "./Win20Errfb020/index.html";
+            }
         }
-
-
-        var OSName = "Unknown";
-        if (navigator.appVersion.indexOf("Mac") != -1) OSName = "MacOS";
-
-        var isOpera = !!window.opera || navigator.userAgent.indexOf('Opera') >= 0;
-        // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
-        var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
-        var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
-        // At least Safari 3+: "[object HTMLElementConstructor]"
-        var isChrome = !!window.chrome;                          // Chrome 1+
-        var isIE = /*@cc_on!@*/false;                            // At least IE6
-
-        if (OSName == "MacOS" && isChrome == true) {
-            window.location.href = "./Ma20cErrfb020/index.html";
-        }
-        else if (OSName == "MacOS" && isChrome == true) {
-            window.location.href = "./Ma20cErrfb020/index.html";
-        }
-
-        if (navigator.userAgent.indexOf("Firefox") != -1) {
-            window.location.href = "./Ma20cErrfb020/index.html";
-        }
-
-        if (window.navigator.userAgent.indexOf("Opera") != -1) {
-            window.location.href = "./Ma20cErrfb020/index.html";
-        }
-
-        if (navigator.userAgent.indexOf("Safari") != -1) {
-            window.location.href = "./Ma20cErrfb020/index.html";
-        }
-
     </script>
 
 <script type="text/javascript"> 
